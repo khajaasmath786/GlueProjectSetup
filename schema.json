@@ -1,0 +1,197 @@
+{
+   "fields":[
+      {
+         "metadata":{
+
+         },
+         "name":"BU2_CTRL_NUM",
+         "nullable":true,
+         "type":"decimal"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"AL3_CDE",
+         "nullable":true,
+         "type":"string"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU2_RCVD_DTE",
+         "nullable":true,
+         "type":"date"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU2_DCMT_ASSOC_NUM",
+         "nullable":true,
+         "type":"string"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU2_RLTD_EVENT_NUM",
+         "nullable":true,
+         "type":"decimal"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU2_STUS_DESC",
+         "nullable":true,
+         "type":"string"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"AL5_CDE",
+         "nullable":true,
+         "type":"string"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU2_OPEN_DTE",
+         "nullable":true,
+         "type":"date"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU2_CLOSE_DTE",
+         "nullable":true,
+         "type":"date"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"SR1_SERV_CASE_NUM",
+         "nullable":true,
+         "type":"decimal"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"NG1_REQM_NUMBER",
+         "nullable":true,
+         "type":"string"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU2_ASSOC_NUM",
+         "nullable":true,
+         "type":"decimal"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"NG7_CLN_REQM_NUM",
+         "nullable":true,
+         "type":"string"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU2_XREF_DESC",
+         "nullable":true,
+         "type":"string"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU2_SPEC_ALRT_CDE",
+         "nullable":true,
+         "type":"string"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU6_90_PCT_GOAL",
+         "nullable":true,
+         "type":"date"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU6_100_PCT_GOAL",
+         "nullable":true,
+         "type":"date"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU6_WORK_LOAD",
+         "nullable":true,
+         "type":"decimal"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU6_WEIGHT_NUM",
+         "nullable":true,
+         "type":"decimal"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"KH5_PROV_NTWRK",
+         "nullable":true,
+         "type":"string"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU2_SECUR_CDE",
+         "nullable":true,
+         "type":"string"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU2_DEL_IND",
+         "nullable":true,
+         "type":"string"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU2_FUT_PROC_DTE",
+         "nullable":true,
+         "type":"date"
+      },
+      {
+         "metadata":{
+
+         },
+         "name":"BU2_FUT_PROC_STUS",
+         "nullable":true,
+         "type":"string"
+      }
+   ],
+   "type":"struct"
+}
