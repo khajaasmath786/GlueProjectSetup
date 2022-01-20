@@ -23,8 +23,8 @@ if __name__ == "__main__":
     conf = (
         SparkConf()
             .setAppName("PySpark S3 Integration Example")
-            .set("spark.hadoop.fs.s3a.access.key", "xxx")
-            .set("spark.hadoop.fs.s3a.secret.key", "xxx")
+            .set("spark.hadoop.fs.s3a.access.key", "xxxx")
+            .set("spark.hadoop.fs.s3a.secret.key", "xxxx")
             .set("spark.hadoop.fs.s3a.session.token","IQoJb3JpZ2luX2VjEN3//////////wEaCXVzLWVhc3QtMSJIMEYCIQDRmLwsaMAvNQNw5IKyVcZYi/m9HT0+O0GBDsFuUL9IDgIhAKkN/q4zUUcTyp+x06ZYWOfXJZS9rgiFeVdaG8sbFpQKKpsDCPb//////////wEQABoMOTY1NTc5MDcyNTI5IgzoNA1tFDRy84ixynwq7wJk5TsfBOMO7Og7E3XVEyqaSvLvVq4nhPWmCFAXfI7RB+ky64X58+brMakY9ha9qz8DdE93KDeZ66GDh9VtEZQmgbLixR7vPCZIKe1DaJAydTsy+YtILtW0FQrOsAmq+57PEOoEYJzzRq7du3N93XHRekTvAG02RpRQQ2fCxn6Ak8HQKluUYsn9xDcYItq0ejZegdp+s7KzP6K9Kug09R0adsf0NiS0vidQzLoen9jbJyib3VU5F7B4neGHgPR9IygtlSQwjF5GCF5PpDtfxBribILzGohKXhZtIpGjx9TTVbUlQde02gxHbapHCPzjUb+MbYnm0re5XRy36Fr5K1EKoq+18rusIH5shNGkTQ1PI3Cn46FWamsK7VIh2wDiN3hu/0ET2Gcsq2XUOD7aWQ3Sjo9CubU+84gWj5M80S3QFUr01clyPXWfrGfXUN2IKRAIZpWxij5IL3JPXqgtBP8T6sTRhXz0Gk4BtyU3czyWMP3ooY8GOqUBbdYQ1lasobAjhwv92rWKsKwEzfElSh9IWVLTRQE17bXGIPEdrQxWYeQbsyihjuADr356kzGYPQl8mWpUjLikn2W6THNrhnH8slAYlE2clHaTb7ulE1FbSQeGzPNjiXhD5FR+s0G6QuRnG6d3k1Ste/PnDJ8qTlRaEgJeGEjXTd4UkPFI6sgscbiwx9I7TeuhtarQOsOorqEpl9o+gRJhB8YgSn5g")
             .set("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
             .set("com.amazonaws.services.s3.enableV4", "true")
@@ -39,9 +39,16 @@ if __name__ == "__main__":
             .setIfMissing("spark.master", "local")
     )
 
+
+
     # Creating the SparkSession object
     spark = SparkSession.builder.config(conf=conf).getOrCreate()
     print("SparkSession Created successfully")
+
+    df = spark.read.json("s3a://clx-xxxxxx-qa/datasets/TDBR113.TWMS001/20212003-183540323.json")
+    df.printSchema()
+    df.show()
+
 
     Employee = Row("id", "name", "age", "salary")
     employee1 = Employee(1, "Ranga", 32, 245000.30)
