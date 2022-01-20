@@ -1,4 +1,8 @@
 from __future__ import print_function
+
+import findspark
+findspark.init()
+
 import sys
 
 from pyspark.conf import SparkConf
@@ -14,22 +18,22 @@ if __name__ == "__main__":
     # awsAccessKey = sys.argv[1]
     # awsSecretKey = sys.argv[2]
     # bucketName = sys.argv[3]
-    bucketName="clx-datawarehouse-qa"
+    bucketName="aws-athena-query-results-965579072529-us-east-1"
 
     conf = (
         SparkConf()
             .setAppName("PySpark S3 Integration Example")
-            .set("spark.hadoop.fs.s3a.access.key", "ASIA6BUH7MQI25BK3OOD")
-            .set("spark.hadoop.fs.s3a.secret.key", "iYRcmHZ+rHY1oW/i8J8vYPoPt0vDSPEXQLozhqiO")
-            .set("spark.hadoop.fs.s3a.session.token","IQoJb3JpZ2luX2VjEMH//////////wEaCXVzLWVhc3QtMSJHMEUCICuSdL0a/0HOAdeBLhWA1yIsyyXibr2kDWZQm4XOePKCAiEA8LNnAMPdsgt+HSh7el0v3Y7wk4gCRPuFLUCxi9oRhlsqmwMI2v//////////ARAAGgw5NjU1NzkwNzI1MjkiDHA4uK1gHd36lrJtaCrvAtyd4cxs66hcj8yPDrkLIAbwzn4Zf3v+0QdPqdGC1PGCky+GjYo+EwpFCos7XSflNqxFLW4bdN0uq2Dy7cKTzyAGR6GBGsbpHHcL7tTEdYx8SvE+qDUQDkd9tpLVHozSAPWwgJwVMzwzBqoVgQtLLTTQn3kVp9H+CaH2PvpPZQJQuERUGT7DzPclav0cw0a10Sw7FmYHjU1iRXuwqLmP3OjtwWk019mznwn/MFjliWoxSMwfcazDif4dsJC3nHizC5pdCs2m2ulkO1jbuNv4U1K4MThsV+Rwm7QAEyRzkOS/9BICXxe72PTqxn75gASbFp+MdKrjG1/9sBzPIdoIYHa7WT+XpgTrhmZwR5d/4OlIG8pTLlyZDMJ8NRdxFLGMnMX29DaxKGHAm7urVXRKQWU8Zzd8Nz5cSBYmuj1wWvRNc/KvBJbqAdEDVvi3IskPiBqvv3UpO0eAZu6JhZu42oc8C03jX3CaEzoCoO0afvow69ebjwY6pgFMU01ZL20BDzB2OZ+sMMINFsKe4Oqnp2YvfQhE1mFKjofLj9JLbk12jHqcoNcXWII+xFUxXthx8EJoCRshKW3YdDgd9uqp4C3tDMywAXuKZ91q7eVmojS659pd6hsr5pKFTmDjKpU4v9zFqxu4AktoyeWr4mnhdpZA10UyV0ijWgJl6jf2nZm9rNOygnlxUVN+KmWeGL38AFpQQtER30vd933lms1H")
+            .set("spark.hadoop.fs.s3a.access.key", "ASIA6BUH7MQI4YLPAY5E")
+            .set("spark.hadoop.fs.s3a.secret.key", "4apVdUtrjupyiEvUzv0hp4iMpZJSagmIsRHJR6Mc")
+            .set("spark.hadoop.fs.s3a.session.token","IQoJb3JpZ2luX2VjEN3//////////wEaCXVzLWVhc3QtMSJIMEYCIQDRmLwsaMAvNQNw5IKyVcZYi/m9HT0+O0GBDsFuUL9IDgIhAKkN/q4zUUcTyp+x06ZYWOfXJZS9rgiFeVdaG8sbFpQKKpsDCPb//////////wEQABoMOTY1NTc5MDcyNTI5IgzoNA1tFDRy84ixynwq7wJk5TsfBOMO7Og7E3XVEyqaSvLvVq4nhPWmCFAXfI7RB+ky64X58+brMakY9ha9qz8DdE93KDeZ66GDh9VtEZQmgbLixR7vPCZIKe1DaJAydTsy+YtILtW0FQrOsAmq+57PEOoEYJzzRq7du3N93XHRekTvAG02RpRQQ2fCxn6Ak8HQKluUYsn9xDcYItq0ejZegdp+s7KzP6K9Kug09R0adsf0NiS0vidQzLoen9jbJyib3VU5F7B4neGHgPR9IygtlSQwjF5GCF5PpDtfxBribILzGohKXhZtIpGjx9TTVbUlQde02gxHbapHCPzjUb+MbYnm0re5XRy36Fr5K1EKoq+18rusIH5shNGkTQ1PI3Cn46FWamsK7VIh2wDiN3hu/0ET2Gcsq2XUOD7aWQ3Sjo9CubU+84gWj5M80S3QFUr01clyPXWfrGfXUN2IKRAIZpWxij5IL3JPXqgtBP8T6sTRhXz0Gk4BtyU3czyWMP3ooY8GOqUBbdYQ1lasobAjhwv92rWKsKwEzfElSh9IWVLTRQE17bXGIPEdrQxWYeQbsyihjuADr356kzGYPQl8mWpUjLikn2W6THNrhnH8slAYlE2clHaTb7ulE1FbSQeGzPNjiXhD5FR+s0G6QuRnG6d3k1Ste/PnDJ8qTlRaEgJeGEjXTd4UkPFI6sgscbiwx9I7TeuhtarQOsOorqEpl9o+gRJhB8YgSn5g")
             .set("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
             .set("com.amazonaws.services.s3.enableV4", "true")
             .set("spark.hadoop.fs.s3a.aws.credentials.provider","org.apache.hadoop.fs.s3a.TemporaryAWSCredentialsProvider")
             .set("spark.hadoop.fs.s3a.endpoint", "")
             .set("spark.hadoop.mapreduce.fileoutputcommitter.algorithm.version", "2")
             .set("spark.speculation", "false")
-            .set("spark.jars", "aws-java-sdk-1.7.4.jar,hadoop-aws-2.7.3.jar")
-            .set("spark.driver.extraClassPath","aws-java-sdk-1.7.4.jar,hadoop-aws-2.7.3.jar")
+            .set("spark.jars", "aws-java-sdk-bundle-1.11.375.jar,hadoop-aws-3.2.2.jar")
+            .set("spark.driver.extraClassPath","aws-java-sdk-bundle-1.11.375.jar,hadoop-aws-3.2.2.jar")
             .set("spark.hadoop.mapreduce.fileoutputcommitter.cleanup-failures.ignored", "true")
             .set("fs.s3a.experimental.input.fadvise", "random")
             .setIfMissing("spark.master", "local")
@@ -47,15 +51,15 @@ if __name__ == "__main__":
 
     employeeData = [employee1, employee2, employee3, employee4]
     employeeDF = spark.createDataFrame(employeeData)
-    employeeDF.printSchema()
-    employeeDF.show()
+    #employeeDF.printSchema()
+    #employeeDF.show()
 
     # Define the s3 destination path
-    s3_dest_path = "s3a://" + bucketName + "/datasets"
+    s3_dest_path = "s3a://" + bucketName + "/asmath"
     print("s3 destination path "+s3_dest_path)
 
     # Write the data as Orc
-    employeeOrcPath = s3_dest_path + "/employee_orc"
+    employeeOrcPath = s3_dest_path
     employeeDF.write.mode("overwrite").format("orc").save(employeeOrcPath)
 
     # Read the employee orc data
